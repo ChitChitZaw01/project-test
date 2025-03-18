@@ -12,7 +12,9 @@ export class UserService {
    * injecting repository here. Another approch can be Active records.
    */
   constructor(
-    @InjectRepository(User) private readonly userRepository: Repository<User>,
+    // @InjectRepository(User) private userRepository: Repository<User>,
+
+     @InjectRepository(User) private readonly userRepository: Repository<User>,
   ) {}
 
   /**
@@ -47,6 +49,14 @@ export class UserService {
    */
   viewUser(id: number): Promise<User| null> {
     return this.userRepository.findOneBy({ id });
+  }
+
+  // async findOne(username: string): Promise<User | null> {
+  //   return this.userRepository.findOneBy({ username });
+  // }
+
+  async findOne(username: string): Promise<User | null> {
+    return this.userRepository.findOneBy({ username });
   }
 
   /**
