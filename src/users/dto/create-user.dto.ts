@@ -11,7 +11,7 @@ import {
   export class CreateUserDto {
 
     @IsNotEmpty()
-    @MinLength(3, { message: 'Username must have atleast 3 characters.' })
+    @MinLength(1, { message: 'Username must have atleast 3 characters.' })
     @IsAlphanumeric(undefined, {
       message: 'Username does not allow other than alpha numeric chars.',
     })
@@ -28,7 +28,7 @@ import {
     password: string;
 
     @IsNotEmpty()
-    @MinLength(3, { message: 'Role must have.' })
+    @MinLength(1, { message: 'Role must have.' })
     @IsAlphanumeric(undefined, {
       message: 'Role does not allow other than alpha numeric chars.',
     })

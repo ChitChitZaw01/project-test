@@ -21,7 +21,7 @@ export class UsersController {
     /**
      * we have used get decorator to get all the user's list
      * so the API URL will be
-     * GET http://localhost:3000/user
+     * GET http://localhost:3000/users
      */
     @Get()
     findAll() {
@@ -31,7 +31,7 @@ export class UsersController {
     /**
      * we have used get decorator with id param to get id from request
      * so the API URL will be
-     * GET http://localhost:3000/user/:id
+     * GET http://localhost:3000/users/:id
      */
     @Get(':id')
     findOne(@Param('id') id: string) {
@@ -41,7 +41,7 @@ export class UsersController {
     /**
      * we have used patch decorator with id param to get id from request
      * so the API URL will be
-     * PATCH http://localhost:3000/user/:id
+     * PATCH http://localhost:3000/users/:id
      */
     @Patch(':id')
     update(@Param('id') id: string, @Body() updateUserDto: UpdateUserDto) {
@@ -51,7 +51,7 @@ export class UsersController {
     /**
      * we have used Delete decorator with id param to get id from request
      * so the API URL will be
-     * DELETE http://localhost:3000/user/:id
+     * DELETE http://localhost:3000/users/:id
      */
     @Delete(':id')
     remove(@Param('id') id: string) {

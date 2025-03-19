@@ -1,7 +1,7 @@
 import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
 
 @Entity()
-export class User {
+export class Patient {
     /**
    * this decorator will help to auto generate id for the table.
    */
@@ -9,11 +9,8 @@ export class User {
   id: number;
 
   @Column({ type: 'varchar', length: 15 })
-  username: string;
+  name: string;
 
-  @Column({ type: 'varchar' })
-  password: string;
-
-  @Column({ type: 'varchar' })
-  role: string;
+  @Column({ type: 'date' })
+  date_of_birth: Date;
 }
