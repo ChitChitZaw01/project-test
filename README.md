@@ -8,6 +8,7 @@ This is a medical record backend api.
 - Nodejs
 - Nestjs
 - postgresql
+- pgAdmin
 
 ## How to build and run the project
 

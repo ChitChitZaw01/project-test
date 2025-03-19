@@ -16,5 +16,4 @@ import {
     @IsNotEmpty()
     @MinLength(1, { message: 'Birth must have.' })
     date_of_birth: Date;
-
 }
