@@ -47,4 +47,15 @@ export class MedicalRecordsService {
     viewUser(id: number): Promise<MedicalRecord| null> {
       return this.medicalRecordRepository.findOneBy({ id });
     }
+
+    /**
+   * This function is used to get all the medical records by doctor_id.
+   * @param doctorId the id of the doctor
+   * @returns promise of array of medical records
+   */
+  findByDoctorId(doctorId: number): Promise<MedicalRecord[]> {
+    return this.medicalRecordRepository.find({
+      where: { doctor_id: doctorId },
+    });
+  }
 }
