@@ -13,7 +13,7 @@ This is a medical record backend api with NestJS, PostgreSQL and JWTtoken.
 ## Database Restoring
 
 Create database name like "pgwithauth" in this app.module.ts and others in this app.module.ts are changed according to your username and password.
-The .bak file in this repository was restored the following command
+The .bak file(file name-db2.bak) in this repository was restored the following command
 
 ```
 psql -U your_postgresql-servername <!-- ** If this command doesn't work, you must add PostgreSQL bin directory to system   -->
