@@ -1,10 +1,6 @@
 import {
     IsAlphanumeric,
-    IsEmail,
-    IsEnum,
-    IsInt,
     IsNotEmpty,
-    IsString,
     Matches,
     MinLength,
   } from 'class-validator';
@@ -13,28 +9,13 @@ import {
     /^(?=.*[a-z])(?=.*[A-Z])(?=.*d)(?=.*[@$!%*?&])[A-Za-zd@$!%*?&]{8,20}$/;
   
   export class CreateUserDto {
-    @IsString()
-    @MinLength(2, { message: 'Name must have atleast 2 characters.' })
-    @IsNotEmpty()
-    name: string;
-  
+
     @IsNotEmpty()
     @MinLength(3, { message: 'Username must have atleast 3 characters.' })
     @IsAlphanumeric(undefined, {
       message: 'Username does not allow other than alpha numeric chars.',
     })
     username: string;
-  
-    @IsNotEmpty()
-    @IsEmail(undefined, { message: 'Please provide valid Email.' })
-    email: string;
-  
-    @IsInt()
-    age: number;
-  
-    @IsString()
-    @IsEnum(['f', 'm', 'u'])
-    gender: string;
   
     @IsNotEmpty()
     @Matches(passwordRegEx, {
@@ -45,4 +26,11 @@ import {
       one special character`,
     })
     password: string;
+
+    @IsNotEmpty()
+    @MinLength(3, { message: 'Role must have.' })
+    @IsAlphanumeric(undefined, {
+      message: 'Role does not allow other than alpha numeric chars.',
+    })
+    role: string;
   }
