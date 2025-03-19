@@ -1,6 +1,6 @@
 # Medical Record Backend
 
-This is a medical record backend api with PostgreSQL and NestJS.
+This is a medical record backend api with NestJS, PostgreSQL and JWTtoken.
 
 ## Prerequisites
 
