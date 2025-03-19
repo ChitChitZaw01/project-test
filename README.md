@@ -10,6 +10,22 @@ This is a medical record backend api.
 - postgresql
 - pgAdmin
 
+## Database Restoring
+
+Create database name like "pgwithauth" in this app.module.ts and others in this app.module.ts are changed according to your username and password.
+The .bak file in this repository was restored the following command
+
+```
+psql -U your_postgresql-servername <!-- ** If this command doesn't work, you must add PostgreSQL bin directory to system   -->
+
+CREATE DATABASE pgwithauth;
+
+\c pgwithnest 
+
+pg_restore -U <username> -d <dbname> -v <backup_file.bak>
+
+```
+
 ## How to build and run the project
 
 When cloning or downloading the repository, the following commands are run in this repository directory.
