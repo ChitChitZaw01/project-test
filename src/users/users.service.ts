@@ -55,6 +55,16 @@ export class UsersService {
     async findOne(username: string): Promise<User | null> {
       return this.userRepository.findOneBy({ username });
     }
+
+    async findOneUsernameColumn(username: string): Promise<string | null> {
+      const user = await this.userRepository.findOne({
+        where: { username },
+        select: ['role'],  // Replace 'email' with the name of the column you want
+      });
+    
+      return user ? user.role : null; // or return the column you selected
+    }
+    
   
     /**
      * this function is used to updated specific user whose id is passed in
